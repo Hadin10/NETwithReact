@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "withReact.Server", "withRea
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{381D9D05-FA7A-4020-8A63-C9C1EC335920}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{22A539A1-8B53-41AD-A74F-9B2937E9DB61}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{381D9D05-FA7A-4020-8A63-C9C1EC335920}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{381D9D05-FA7A-4020-8A63-C9C1EC335920}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{381D9D05-FA7A-4020-8A63-C9C1EC335920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A539A1-8B53-41AD-A74F-9B2937E9DB61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A539A1-8B53-41AD-A74F-9B2937E9DB61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A539A1-8B53-41AD-A74F-9B2937E9DB61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A539A1-8B53-41AD-A74F-9B2937E9DB61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

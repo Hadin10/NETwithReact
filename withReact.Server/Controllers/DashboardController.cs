@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Authorization;
+using System.Reflection;
+using BLL.UnitOfWork;
 
 namespace withReact.Server.Controllers
 {
@@ -10,21 +12,19 @@ namespace withReact.Server.Controllers
     [Route("[controller]")]
     public class DashboardController : ControllerBase
     {
-        private readonly ApplicationDbContext _db;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ILogger<DashboardController> _logger;
 
-        public DashboardController(ApplicationDbContext db, ILogger<DashboardController> logger)
+        public DashboardController(IUnitOfWork unitOfWork, ILogger<DashboardController> logger)
         {
-            _db = db;
+            _unitOfWork = unitOfWork;
             _logger = logger;
         }
         [HttpGet]
         [Route("getallpicturedata")]
         public async Task<IActionResult> GetAllPictureData()
         {
-            var queryData = from p in _db.Product
-                            select p.Name;
-            var data = await queryData.ToListAsync();
+            var data =await _unitOfWork.Dashboard.GetDashboardAllPictureData();
             return new JsonResult(new { data = data, success = true });
         }
     }
