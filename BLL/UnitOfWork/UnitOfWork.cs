@@ -20,7 +20,10 @@ namespace BLL.UnitOfWork
             Dashboard = new DashboardRepository(db, logger);
         }
         public IDashboardRepository Dashboard { get; }
-
+        public async Task SaveAsync()
+        {
+            await _db.SaveChangesAsync();
+        }
         public async void Dispose()
         {
             await _db.DisposeAsync();

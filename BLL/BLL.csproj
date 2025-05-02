@@ -7,8 +7,6 @@
   </PropertyGroup>
 
 	<ItemGroup>
-		<Folder Include="Master\IRepository\" />
-		<Folder Include="Master\Repository\" />
 		<Folder Include="UnitOfWork\" />
 	</ItemGroup>
 
