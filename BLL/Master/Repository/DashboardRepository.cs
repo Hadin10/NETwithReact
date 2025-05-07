@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using BLL.Master.IRepository;
+using System.Reflection.Metadata;
+using DAL.Models;
 
 namespace BLL.Master.Repository
 {
-    public class DashboardRepository: IDashboardRepository
+    public class DashboardRepository: MasterRepository<Product>,IDashboardRepository
     {
         private readonly ApplicationDbContext _db;
         private readonly ILogger<DashboardRepository> _logger;
 
-        public DashboardRepository(ApplicationDbContext db, ILogger<DashboardRepository> logger)
+        public DashboardRepository(ApplicationDbContext db, ILogger<DashboardRepository> logger) : base(db)
         {
             _db = db;
             _logger = logger;

@@ -24,8 +24,16 @@ namespace withReact.Server.Controllers
         [Route("getallpicturedata")]
         public async Task<IActionResult> GetAllPictureData()
         {
-            var data =await _unitOfWork.Dashboard.GetDashboardAllPictureData();
-            return new JsonResult(new { data = data, success = true });
+            //var data =await _unitOfWork.Dashboard.GetDashboardAllPictureData();
+            var data =_unitOfWork.Dashboard.GetAllAsyncQueryable();
+            var dashboardData = await data.Select(x=> new
+            {
+                x.Name,
+                x.Title,
+                x.Description,
+            })
+            .ToListAsync();
+            return new JsonResult(new { data = dashboardData, success = true });
         }
     }
 }
