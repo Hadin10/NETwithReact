@@ -36,5 +36,9 @@ namespace BLL.Master.Repository
             }
             return query;
         }
+        public async Task<T> GetAsync(long id)
+        {
+            return (await dbSet!.FindAsync(id))!;
+        }
     }
 }

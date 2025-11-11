@@ -10,6 +10,6 @@ namespace BLL.Master.IRepository
 {
     public interface IDashboardRepository:IMasterRepository<Product>
     {
-        Task<IEnumerable<object>> GetDashboardAllPictureData();
+        //Task<IEnumerable<object>> GetDashboardAllPictureData();
     }
 }

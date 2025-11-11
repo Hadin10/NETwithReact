@@ -1,7 +1,8 @@
+using BLL.UnitOfWork;
 using DAL.Data;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.EntityFrameworkCore;
-using BLL.UnitOfWork;
+using withReact.Server.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ConnectionString1");
@@ -16,7 +17,7 @@ var app = builder.Build();
 
 app.UseDefaultFiles();
 app.MapStaticAssets();
-
+app.MapAllEndpoints();
 
 if (app.Environment.IsDevelopment())
 {

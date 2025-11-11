@@ -22,17 +22,17 @@ namespace BLL.Master.Repository
             _db = db;
             _logger = logger;
         }
-        public async Task<IEnumerable<object>> GetDashboardAllPictureData()
-        {
-            var queryData = from p in _db.Product
-                            select new
-                            {
-                                p.Name,
-                                p.Title,
-                                p.Description,
-                            };
-            var data = await queryData.ToListAsync();
-            return data;
-        }
+        //public async Task<IEnumerable<object>> GetDashboardAllPictureData()
+        //{
+        //    var queryData = from p in _db.Product
+        //                    select new
+        //                    {
+        //                        p.Name,
+        //                        p.Title,
+        //                        p.Description,
+        //                    };
+        //    var data = await queryData.ToListAsync();
+        //    return data;
+        //}
     }
 }

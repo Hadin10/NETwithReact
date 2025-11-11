@@ -10,5 +10,6 @@ namespace BLL.Master.Repository
     public interface IMasterRepository<T> where T : class
     {
         IQueryable<T> GetAllAsyncQueryable(Expression<Func<T, bool>>? filter = null, string? includeProperties = null);
+        Task<T> GetAsync(long id);
     }
 }
